@@ -17,4 +17,5 @@ void modifier(listeChainee* liste, int index, char nouvelleValeur);
 int taille(listeChainee* liste);
 void vider(listeChainee* liste);
 void supprimerElement(listeChainee* liste, int index);
+void ajouterIndex(listeChainee *liste, int index, char valeur);
 #endif

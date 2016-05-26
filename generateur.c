@@ -10,7 +10,8 @@ int main(){
 		ajouter(&code, lettre);
 		lettre++;
 	}
-	vider(&code);
+	supprimerElement(&code, 5);
+	ajouterIndex(&code, 5, 'e');
 	afficher(&code);
 	printf("%d\n", taille(&code)); 
 	return 0;	
