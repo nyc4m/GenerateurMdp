@@ -11,7 +11,7 @@ struct listeChainee{
 void ajouter(listeChainee* liste, char a);
 void initialiser(listeChainee* liste);
 int estVide(listeChainee* liste);
-void ajouterDebut(listeChainee* liste, char a);
+void ajouterPremierElement(listeChainee* liste, char a);
 void afficher(listeChainee* liste);
 void modifier(listeChainee* liste, int index, char nouvelleValeur);
 int taille(listeChainee* liste);
