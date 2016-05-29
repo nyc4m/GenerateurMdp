@@ -49,7 +49,7 @@ void afficher(listeChainee* liste ){
 }
 
    void modifier(listeChainee* liste, int index, char nouvelleVal){
-        supprimerElement(liste, index);
+        supprimerElement(liste, index+1);
 				ajouterIndex(liste, index, nouvelleVal);
    }
 
