@@ -10,8 +10,8 @@ int main(){
 		ajouter(&code, lettre);
 		lettre++;
 	}
-	modifier(&code, 1, 'o');
-	modifier(&code, 24, 'R');
+	modifier(&code, 0, 'o');
+	modifier(&code, 25, 'R');
 	printf("Premier caractere : %c\n", code.debut->valeur);
 	printf("Dernier Caractère : %c\n", code.fin->valeur);
 	printf("taille : %d\n", taille(&code));
