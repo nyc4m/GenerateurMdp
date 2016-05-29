@@ -47,22 +47,11 @@ void afficher(listeChainee* liste ){
                 ptr = ptr->suivant;
         }
 }
-/**
+
    void modifier(listeChainee* liste, int index, char nouvelleVal){
-        int i;
-        Element *ptr = NULL;
-        ptr = liste->debut;
-        if(index=0) {
-                printf("%c", ptr->valeur);
-                //pointeur->valeur = nouvelleVal;
-        }else{
-                for(i = 0; i < index; i++) {
-                        ptr = ptr->suivant;
-                }
-                ptr->valeur = nouvelleVal;
-        }
+        supprimerElement(liste, index);
+				ajouterIndex(liste, index, nouvelleVal);
    }
- */
 
 int taille(listeChainee* liste){
         int compteur = 0;
