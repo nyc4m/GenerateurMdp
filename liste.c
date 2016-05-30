@@ -48,10 +48,10 @@ void afficher(listeChainee* liste ){
         }
 }
 
-   void modifier(listeChainee* liste, int index, char nouvelleVal){
-        supprimerElement(liste, index+1);
-				ajouterIndex(liste, index, nouvelleVal);
-   }
+void modifier(listeChainee* liste, int index, char nouvelleVal){
+        supprimerElement(liste, index);
+        ajouterIndex(liste, index-1, nouvelleVal);
+}
 
 int taille(listeChainee* liste){
         int compteur = 0;
@@ -77,11 +77,17 @@ void vider(listeChainee* liste){
 
 void supprimerElement(listeChainee* liste, int index){
         Element *ptr = liste->debut;
-        int i;
-        for(i = 0; i < index-2; i++) {
-                ptr = ptr->suivant;
+        if(index == 0) {
+                liste->debut = ptr->suivant;
+                free(ptr);
+        }else{
+                int i;
+                for(i = 0; i < index; i++) {
+                        ptr = ptr->suivant;
+                }
+                ptr->suivant = ptr->suivant->suivant;
+                free(ptr);
         }
-        ptr->suivant = ptr->suivant->suivant;
 
 
 }
@@ -89,12 +95,12 @@ void supprimerElement(listeChainee* liste, int index){
 void ajouterIndex(listeChainee *liste, int index, char valeur){
         if(index == taille(liste)) {
                 ajouter(liste, valeur);
-        }else if(index == 0){
-					   		Element *element = malloc(sizeof(*element));
-								element->valeur = valeur;
-								element->suivant = liste->debut;
-								liste->debut = element;
-				}else{
+        }else if(index == 0) {
+                Element *element = malloc(sizeof(*element));
+                element->valeur = valeur;
+                element->suivant = liste->debut;
+                liste->debut = element;
+        }else{
                 Element *ptr = liste->debut;
                 int i;
                 for(i = 0; i <index-1; i++) {
