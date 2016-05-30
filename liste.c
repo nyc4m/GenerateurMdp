@@ -77,6 +77,7 @@ void vider(listeChainee* liste){
 
 void supprimerElement(listeChainee* liste, int index){
         Element *ptr = liste->debut;
+        Element *toRemove = null;
         if(index == 0) {
                 liste->debut = liste->debut->suivant;
                 free(ptr);
@@ -89,10 +90,12 @@ void supprimerElement(listeChainee* liste, int index){
                 ptr->suivant = NULL;
         }else{
                 int i;
-                for(i = 0; i < index; i++) {
+                for(i = 0; i < index-1; i++) {
                         ptr = ptr->suivant;
                 }
-                ptr->suivant = ptr->suivant;
+                toRemove = ptr->suivant;
+                ptr->suivant = toRemove->suivant;
+                free(toRemove);
                 free(ptr);
         }
 
