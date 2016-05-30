@@ -80,6 +80,13 @@ void supprimerElement(listeChainee* liste, int index){
         if(index == 0) {
                 liste->debut = liste->debut->suivant;
                 free(ptr);
+        }else if(index == taille(liste)-1) {
+                while(ptr->suivant == liste->fin) {
+                        ptr = ptr->suivant;
+                }
+                free(liste->fin);
+                liste->fin  = ptr;
+                ptr->suivant = NULL;
         }else{
                 int i;
                 for(i = 0; i < index; i++) {
