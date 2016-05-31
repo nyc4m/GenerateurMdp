@@ -50,7 +50,7 @@ void afficher(listeChainee* liste ){
 
 void modifier(listeChainee* liste, int index, char nouvelleVal){
         supprimerElement(liste, index);
-        ajouterIndex(liste, index-1, nouvelleVal);
+        ajouterIndex(liste, index, nouvelleVal);
 }
 
 int taille(listeChainee* liste){
@@ -81,7 +81,6 @@ void supprimerElement(listeChainee* liste, int index){
         if(index == 0) {
                 liste->debut = liste->debut->suivant;
                 free(ptr);
-
         }else{
                 int i;
                 for(i = 0; i < index-1; i++) {

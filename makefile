@@ -5,5 +5,6 @@ liste.o : liste.c
 generateur.o: generateur.c
 	gcc -c generateur.c
 clean:
-	rm -rf *.o Gen
-	
+	rm -rf *.o 
+sclean:
+	rm -rf *.o Gen	
