@@ -1,19 +1,19 @@
 Generateur de mot de passe
 ===========================
-Petite application permettant de générer un mot de passe. Pour ce faire une liste chainée sera utilisée.
-Le but final sera d'afficher le temps nécessaire pour trouver un mot de passe passé en paramètre.
+Petite application permettant de gï¿½nï¿½rer un mot de passe. Pour ce faire une liste chainï¿½e sera utilisï¿½e.
+Le but final sera d'afficher le temps nï¿½cessaire pour trouver un mot de passe passï¿½ en paramï¿½tre.
 
 ##A faire
-Pour le moment il faut mettre en place les opération sur la liste chainée.
-* Remplacer un élément de la liste ne fonctionne pas correctement.
-* Supprimer le dernier element ne fonctionne pas (La memoire n'est pas accessible)
+Pour le moment il faut mettre en place les opï¿½ration sur la liste chainï¿½e.
+* Remplacer un ï¿½lï¿½ment de la liste ne fonctionne pas correctement.
 
 ##Fait
-* Structure de la liste chainée
-* Structure d'un élément
-* Initialiser la liste chainée
-* Ajouter un élément en fonction d'un indice
-* ajouter un élement à la fin
+* Structure de la liste chainï¿½e
+* Structure d'un ï¿½lï¿½ment
+* Initialiser la liste chainï¿½e
+* Ajouter un ï¿½lï¿½ment en fonction d'un indice
+* ajouter un ï¿½lement ï¿½ la fin
 * afficher une liste
 * vider une liste
 * tester si une liste est vide
+* Supprimer un element fonctionne
