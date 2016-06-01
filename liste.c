@@ -43,7 +43,7 @@ void afficher(listeChainee* liste ){
         Element* ptr = NULL;
         ptr = liste->debut;
         while(ptr != NULL ) {
-                printf("%c\n", ptr->valeur);
+                printf("%c", ptr->valeur);
                 ptr = ptr->suivant;
         }
 }
@@ -119,4 +119,13 @@ void ajouterIndex(listeChainee *liste, int index, char valeur){
                 element->suivant = ptr->suivant;
                 ptr->suivant = element;
         }
+}
+
+Element* obtenirElement(listeChainee *liste, int index){
+    int i;
+    Element *ptr = liste->debut;
+    for(i = 0; i<index-1; i++){
+        ptr = ptr->suivant;
+    }
+    return ptr;
 }
