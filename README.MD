@@ -6,6 +6,7 @@ Le but final sera d'afficher le temps n�cessaire pour trouver un mot de passe 
 ##A faire
 Pour le moment il faut mettre en place les op�ration sur la liste chain�e.
 * Remplacer un �l�ment de la liste ne fonctionne pas correctement.
+* Implementer un traitement pour une liste doublement chainee.
 
 ##Fait
 * Structure de la liste chain�e
