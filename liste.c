@@ -56,6 +56,7 @@ void afficherFD(listeChainee* liste){
                 ptr = ptr->precedent;
         }
 }
+
 void modifier(listeChainee* liste, int index, char nouvelleVal){
         supprimerElement(liste, index);
         ajouterIndex(liste, index, nouvelleVal);
@@ -88,6 +89,8 @@ void supprimerElement(listeChainee* liste, int index){
         Element *toRemove = NULL;
         if(index == 0) {
                 liste->debut = liste->debut->suivant;
+                //Le precedent du suivant devient NULL
+                liste->debut->suivant->precent = NULL;
                 free(ptr);
         }else{
                 int i;
