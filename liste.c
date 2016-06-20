@@ -85,29 +85,6 @@ void vider(listeChainee* liste){
 }
 
 void supprimerElement(listeChainee* liste, int index){
-        Element *ptr = liste->debut;
-        Element *toRemove = NULL;
-        if(index == 0) {
-                liste->debut = liste->debut->suivant;
-                //Le precedent du suivant devient NULL
-                liste->debut->suivant->precent = NULL;
-                free(ptr);
-        }else{
-                int i;
-                for(i = 0; i < index-1; i++) {
-                        ptr = ptr->suivant;
-                }
-                toRemove = ptr->suivant;
-
-                if(index == taille(liste)-1) {
-                        liste->fin = ptr;
-                        ptr->suivant = NULL;
-                }else{
-                        ptr->suivant = toRemove->suivant;
-                }
-                free(toRemove);
-        }
-
 
 }
 
