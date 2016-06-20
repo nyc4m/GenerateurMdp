@@ -5,9 +5,9 @@ void ajouterPremierElement(listeChainee* liste, char a){
         Element* element = malloc(sizeof(*element));
         element->valeur = a;
         element->suivant = NULL;
+        element->precedent = NULL;
         liste->debut = element;
         liste->fin = element;
-
 }
 
 void initialiser(listeChainee* liste){
@@ -23,7 +23,7 @@ void ajouter(listeChainee* liste, char a){
                 Element* element = malloc(sizeof(*element));
                 element->valeur = a;
                 element->suivant = NULL;
-
+                element->precedent = liste->fin;
                 //Le nouvel element devient le suivant du dernier
                 liste->fin->suivant = element;
                 //le nouvel element devient le dernier element
@@ -39,7 +39,7 @@ int estVide(listeChainee* liste){
         return res;
 }
 
-void afficher(listeChainee* liste ){
+void afficherDF(listeChainee* liste ){
         Element* ptr = NULL;
         ptr = liste->debut;
         while(ptr != NULL ) {
@@ -48,6 +48,14 @@ void afficher(listeChainee* liste ){
         }
 }
 
+void afficherFD(listeChainee* liste){
+        Element* ptr = NULL;
+        ptr = liste->fin;
+        while(ptr != NULL) {
+                printf("%c", ptr->valeur);
+                ptr = ptr->precedent;
+        }
+}
 void modifier(listeChainee* liste, int index, char nouvelleVal){
         supprimerElement(liste, index);
         ajouterIndex(liste, index, nouvelleVal);
@@ -122,10 +130,10 @@ void ajouterIndex(listeChainee *liste, int index, char valeur){
 }
 
 Element* obtenirElement(listeChainee *liste, int index){
-    int i;
-    Element *ptr = liste->debut;
-    for(i = 0; i< index-1; i++){
-        ptr = ptr->suivant;
-    }
-    return ptr;
+        int i;
+        Element *ptr = liste->debut;
+        for(i = 0; i< index-1; i++) {
+                ptr = ptr->suivant;
+        }
+        return ptr;
 }

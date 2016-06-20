@@ -12,6 +12,8 @@ int main(){
 																ch = obtenirElement(&code, 0);
 																ch->valeur++;
 								}
-								afficher(&code);
+								afficherDF(&code);
+								printf("\n");
+								afficherFD(&code);
 								printf("\n");
 }
