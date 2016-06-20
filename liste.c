@@ -124,7 +124,7 @@ void ajouterIndex(listeChainee *liste, int index, char valeur){
 Element* obtenirElement(listeChainee *liste, int index){
     int i;
     Element *ptr = liste->debut;
-    for(i = 0; i<index-1; i++){
+    for(i = 0; i< index-1; i++){
         ptr = ptr->suivant;
     }
     return ptr;

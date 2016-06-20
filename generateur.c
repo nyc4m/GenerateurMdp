@@ -3,17 +3,15 @@
 int main(){
 								listeChainee code;
 								int i;
-								char c = 'a';
-								Element *ch = 0;
+								Element* ch = malloc(sizeof(*ch));
+								ch->valeur = 'a';
+								ch->suivant = NULL;
 								initialiser(&code);
 								for(i = 0; i <= 10; i++) {
-																ajouter(&code, c);
-																c++;
+																ajouter(&code, ch->valeur);
+																ch = obtenirElement(&code, 0);
+																ch->valeur++;
 								}
-								printf("Chaine : ");
 								afficher(&code);
-								ch = obtenirElement(&code, INDICE);
-								ch->valeur = 'B';
-								printf("\nElement a l'index %d = %c\n", INDICE, ch->valeur);
-								printf("taille : %d\n", taille(&code));
+								printf("\n");
 }
