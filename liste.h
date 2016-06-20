@@ -20,4 +20,5 @@ void vider(listeChainee* liste);
 void supprimerElement(listeChainee* liste, int index);
 void ajouterIndex(listeChainee *liste, int index, char valeur);
 Element* obtenirElement(listeChainee *liste, int index);
+void supprimerPremierElement(listeChainee *liste);
 #endif

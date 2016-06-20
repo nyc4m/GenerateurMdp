@@ -85,7 +85,18 @@ void vider(listeChainee* liste){
 }
 
 void supprimerElement(listeChainee* liste, int index){
+    if(index == 0){
+      supprimerPremierElement(liste);
+    }
+}
 
+void supprimerPremierElement(listeChainee* liste){
+  Element *ptr = malloc(sizeof(*ptr));
+  ptr = liste->debut;
+  ptr->suivant->precedent = NULL;
+  liste->debut = ptr->suivant;
+  ptr->suivant = NULL;
+  free(ptr);
 }
 
 void ajouterIndex(listeChainee *liste, int index, char valeur){
