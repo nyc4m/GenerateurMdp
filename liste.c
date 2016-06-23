@@ -99,6 +99,8 @@ void supprimerDernierElement(listeChainee* liste){
     ptr->precedent = NULL;
     ptr2->suivant = NULL;
 
+    liste->fin = ptr2;
+
     free(ptr);
 }
 
