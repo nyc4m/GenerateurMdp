@@ -85,32 +85,43 @@ void vider(listeChainee* liste){
 }
 
 void supprimerElement(listeChainee* liste, int index){
-    if(index == 0){
-      supprimerPremierElement(liste);
-    }else if (index == taille(liste)-1){
-      supprimerDernierElement(liste);
-    }
+        if(index == 0) {
+                supprimerPremierElement(liste);
+        }else if (index == taille(liste)-1) {
+                supprimerDernierElement(liste);
+        }else if (index >=taille(liste)) {
+                printf("[INFO]\tindex inexistant\n");
+        }else{
+                Element* ptr = liste->debut;
+                int i;
+                for(i = 0; i < index; i++) {
+                        ptr = ptr->suivant;
+                }
+
+                ptr->precedent->suivant = ptr->suivant;
+                free(ptr);
+        }
 }
 
 void supprimerDernierElement(listeChainee* liste){
-    Element* ptr = liste->fin;
-    Element* ptr2 = liste->fin->precedent;
+        Element* ptr = liste->fin;
+        Element* ptr2 = liste->fin->precedent;
 
-    ptr->precedent = NULL;
-    ptr2->suivant = NULL;
+        ptr->precedent = NULL;
+        ptr2->suivant = NULL;
 
-    liste->fin = ptr2;
+        liste->fin = ptr2;
 
-    free(ptr);
+        free(ptr);
 }
 
 void supprimerPremierElement(listeChainee* liste){
-  Element *ptr = malloc(sizeof(*ptr));
-  ptr = liste->debut;
-  ptr->suivant->precedent = NULL;
-  liste->debut = ptr->suivant;
-  ptr->suivant = NULL;
-  free(ptr);
+        Element *ptr = malloc(sizeof(*ptr));
+        ptr = liste->debut;
+        ptr->suivant->precedent = NULL;
+        liste->debut = ptr->suivant;
+        ptr->suivant = NULL;
+        free(ptr);
 }
 
 void ajouterIndex(listeChainee *liste, int index, char valeur){
@@ -144,10 +155,10 @@ Element* obtenirElement(listeChainee *liste, int index){
 }
 
 void afficherCarac(listeChainee* liste){
-  printf("list : ");
-  afficherDF(liste);
-  printf("\n");
-  printf("first char : %c\n", liste->debut->valeur);
-  printf("last char : %c\n", liste->fin->valeur);
-  printf("size : %d\n", taille(liste));
+        printf("list : ");
+        afficherDF(liste);
+        printf("\n");
+        printf("first char : %c\n", liste->debut->valeur);
+        printf("last char : %c\n", liste->fin->valeur);
+        printf("size : %d\n", taille(liste));
 }
