@@ -116,8 +116,7 @@ void supprimerDernierElement(listeChainee* liste){
 }
 
 void supprimerPremierElement(listeChainee* liste){
-        Element *ptr = malloc(sizeof(*ptr));
-        ptr = liste->debut;
+        Element *ptr = liste->debut;
         ptr->suivant->precedent = NULL;
         liste->debut = ptr->suivant;
         ptr->suivant = NULL;
