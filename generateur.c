@@ -15,16 +15,16 @@ int main(){
 																if(ptr->valeur == 'z') {
 																	afficherDF(&code);
 																	printf("\n");
-																	traiter(&code, ptr);
+																	traiter(&code, &ptr);
 																}
 								}
 }
 
-void traiter(listeChainee* liste, Element* e){
-	if(e->suivant == NULL)	{
+void traiter(listeChainee* liste, Element** e){
+	if((*e)->suivant == NULL)	{
 			ajouter(liste, 'a');
-			e->valeur-=25;
+			(*e)->valeur-=25;
 	}else{
-		e = e->suivant;
+		*e = (*e)->suivant;
 	}
 }
